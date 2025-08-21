@@ -1,0 +1,25 @@
+{
+  "name": "sejong-schedule",
+  "version": "1.0.0",
+  "description": "Sejong Science High School (세종과학고등학교) 1학년 1반 시간표 웹사이트",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Sejong",
+    "세종과학고등학교",
+    "컴시간",
+    "comcigan",
+    "timetable"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "comcigan-parser": "^1.0.0",
+    "express": "^4.19.2",
+    "lru-cache": "^10.4.3"
+  }
+}
