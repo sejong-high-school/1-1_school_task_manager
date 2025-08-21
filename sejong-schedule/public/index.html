@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>세종과학고 1학년 1반 시간표</title>
+    <meta name="description" content="컴시간 알리미 연동 - 세종과학고등학교 1학년 1반 시간표" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <header class="bg-blue-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <h1 class="text-xl font-extrabold tracking-tight">세종과학고등학교</h1>
+            <nav class="text-sm opacity-90">
+                <a href="/" class="hover:underline">시간표</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-6">
+        <section class="mb-6">
+            <h2 class="text-2xl font-bold text-blue-900">1학년 1반 시간표</h2>
+            <p class="text-sm text-gray-500">컴시간 알리미 데이터를 실시간으로 표시합니다.</p>
+        </section>
+        <section id="app" class="overflow-x-auto"></section>
+    </main>
+
+    <footer class="border-t border-gray-200 mt-10">
+        <div class="max-w-6xl mx-auto px-4 py-6 text-xs text-gray-500">
+            본 사이트는 학급 편의를 위한 비공식 페이지입니다. 데이터 출처: 컴시간 알리미
+        </div>
+    </footer>
+
+    <script src="/app.js"></script>
+    <script>
+        // Simple theme accent for Sejong (blue/gold)
+        document.documentElement.style.setProperty('--sejong-blue', '#0b3a8f');
+        document.documentElement.style.setProperty('--sejong-gold', '#d4af37');
+    </script>
+</body>
+</html>
+
