@@ -39,3 +39,32 @@ Note: Some firmware requires enabling the app's HTTP API and setting the token i
 - The token and URL are stored in `localStorage` on your device only.
 - Anyone who knows the phone URL and token could send SMS. Keep them secret.
 - Consider reserving the phone's IP in your router to avoid changes.
+
+## Option: expose phone with ngrok + Cloudflare Worker (CORS)
+
+1) Run ngrok in Termux on the phone
+```bash
+pkg update
+pkg install wget tar
+wget https://ngrok-agent.s3.amazonaws.com/ngrok-stable-linux-arm64.tgz
+tar -xzf ngrok-stable-linux-arm64.tgz
+./ngrok config add-authtoken YOUR_NGROK_TOKEN
+./ngrok http http://127.0.0.1:8082
+```
+Note: If your Traccar listens on the LAN IP, use `http://<PHONE_LAN_IP>:8082`.
+
+2) Deploy the Cloudflare Worker proxy
+- Install Wrangler: `npm i -g wrangler`
+- Edit `wrangler.toml` and set `UPSTREAM_URL` to your ngrok URL.
+- Optionally set `GATEWAY_TOKEN` to inject the Authorization header.
+- Login and deploy:
+```bash
+wrangler login
+wrangler deploy
+```
+
+3) Point the PWA to the Worker URL
+- In the app, set Gateway Base URL to your Worker URL (e.g., `https://traccar-sms-proxy.your-subdomain.workers.dev`).
+- If using `GATEWAY_TOKEN` in the Worker, you can leave the app token empty.
+
+This Worker adds CORS headers and forwards requests to your ngrok endpoint.

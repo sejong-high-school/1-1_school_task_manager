@@ -1,0 +1,11 @@
+name = "traccar-sms-proxy"
+main = "worker.js"
+compatibility_date = "2024-05-01"
+
+[vars]
+# Set to your public ngrok URL, e.g. https://abc123.ngrok-free.app
+UPSTREAM_URL = "https://REPLACE_WITH_NGROK_URL"
+
+# Optional: set the Traccar token to auto-inject as Authorization header
+# GATEWAY_TOKEN = "your-traccar-token"
+
