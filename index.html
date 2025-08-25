@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0ea5e9" />
+    <title>SMS Sender (Traccar Gateway)</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>SMS Sender</h1>
+
+      <section class="card">
+        <h2>Gateway Settings</h2>
+        <div class="grid">
+          <label>
+            <span>Gateway Base URL</span>
+            <input id="gatewayUrl" type="url" placeholder="http://192.168.1.50:8082" />
+          </label>
+          <label>
+            <span>API Token</span>
+            <input id="apiToken" type="password" placeholder="your-token" />
+          </label>
+        </div>
+        <button id="saveConfig">Save Settings</button>
+      </section>
+
+      <section class="card">
+        <h2>Compose Message</h2>
+        <label>
+          <span>Recipients (comma or newline separated, include country code e.g. +82...)</span>
+          <textarea id="recipients" rows="3" placeholder="+821012345678, +82105551234"></textarea>
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea id="message" rows="6" maxlength="480" placeholder="Type your SMS..."></textarea>
+        </label>
+        <button id="sendBtn">Send</button>
+        <div id="status" class="status" aria-live="polite"></div>
+      </section>
+
+      <footer>
+        <small>Uses Traccar SMS Gateway running on your Android phone. Data stays local.</small>
+      </footer>
+    </main>
+
+    <script src="/app.js" defer></script>
+  </body>
+  </html>
+

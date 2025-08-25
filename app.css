@@ -1,0 +1,19 @@
+:root { color-scheme: light dark; }
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif; }
+body { background: #0b1220; color: #e5e7eb; display: grid; place-items: start center; }
+.container { width: 100%; max-width: 720px; padding: 24px; }
+h1 { margin: 0 0 16px; font-size: 24px; }
+h2 { margin: 0 0 12px; font-size: 18px; }
+.card { background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 16px; margin: 12px 0 20px; box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+label { display: block; margin: 10px 0; }
+label span { display: block; font-size: 12px; color: #9ca3af; margin-bottom: 6px; }
+input, textarea { width: 100%; border: 1px solid #374151; background: #0f172a; color: #e5e7eb; border-radius: 10px; padding: 10px 12px; font-size: 14px; outline: none; transition: border-color .2s; }
+input:focus, textarea:focus { border-color: #38bdf8; }
+.grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+@media (min-width: 560px) { .grid { grid-template-columns: 1fr 1fr; } }
+button { appearance: none; border: none; background: #38bdf8; color: #0b1220; font-weight: 700; padding: 10px 14px; border-radius: 10px; cursor: pointer; margin-top: 10px; }
+button:disabled { background: #334155; color: #94a3b8; cursor: not-allowed; }
+.status { margin-top: 10px; font-size: 13px; color: #a7f3d0; white-space: pre-wrap; }
+footer { color: #9ca3af; margin-top: 8px; text-align: center; }
+
